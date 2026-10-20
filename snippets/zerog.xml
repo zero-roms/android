@@ -4,8 +4,12 @@
 
   Two layers, kept apart on purpose (see ROM_PLAN.md, multi-device design):
     common layer  - vendor/zerog: everything that makes this ROM ZeroG
-    device layer  - one device tree, kernel and blobs per phone, unmodified
-                    LineageOS/TheMuppets repos where possible
+    device layer  - one device tree, kernel and blobs per phone. Mirrored
+                    into zero-roms from LineageOS/TheMuppets (change 7,
+                    20 October 2026) so builds never depend on upstream
+                    repos staying put; kept identical to upstream until
+                    ZeroG needs its own device patches. Refresh the mirrors
+                    from upstream before each monthly build (HANDBOOK.md).
 -->
 <manifest>
 
@@ -13,11 +17,11 @@
   <project name="zero-roms/android_vendor_zerog" path="vendor/zerog" remote="github" revision="zerog-24.0" />
 
   <!-- Device layer: Xiaomi Redmi Note 8 (ginkgo), Snapdragon 665 (sm6125) -->
-  <project name="LineageOS/android_device_xiaomi_ginkgo"             path="device/xiaomi/ginkgo"        remote="github" revision="lineage-24.0" />
-  <project name="LineageOS/android_device_xiaomi_sm6125-common"      path="device/xiaomi/sm6125-common" remote="github" revision="lineage-24.0" />
-  <project name="LineageOS/android_hardware_xiaomi"                  path="hardware/xiaomi"             remote="github" revision="lineage-24.0" />
-  <project name="LineageOS/android_kernel_xiaomi_sm6125"             path="kernel/xiaomi/sm6125"        remote="github" revision="lineage-24.0" />
-  <project name="TheMuppets/proprietary_vendor_xiaomi_ginkgo"        path="vendor/xiaomi/ginkgo"        remote="github" revision="lineage-24.0" />
-  <project name="TheMuppets/proprietary_vendor_xiaomi_sm6125-common" path="vendor/xiaomi/sm6125-common" remote="github" revision="lineage-24.0" />
+  <project name="zero-roms/android_device_xiaomi_ginkgo"             path="device/xiaomi/ginkgo"        remote="github" revision="lineage-24.0" />
+  <project name="zero-roms/android_device_xiaomi_sm6125-common"      path="device/xiaomi/sm6125-common" remote="github" revision="lineage-24.0" />
+  <project name="zero-roms/android_hardware_xiaomi"                  path="hardware/xiaomi"             remote="github" revision="lineage-24.0" />
+  <project name="zero-roms/android_kernel_xiaomi_sm6125"             path="kernel/xiaomi/sm6125"        remote="github" revision="lineage-24.0" />
+  <project name="zero-roms/proprietary_vendor_xiaomi_ginkgo"        path="vendor/xiaomi/ginkgo"        remote="github" revision="lineage-24.0" />
+  <project name="zero-roms/proprietary_vendor_xiaomi_sm6125-common" path="vendor/xiaomi/sm6125-common" remote="github" revision="lineage-24.0" />
 
 </manifest>
