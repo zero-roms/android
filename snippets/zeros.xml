@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ZeroG manifest snippet, included from default.xml.
+  ZeroS manifest snippet, included from default.xml.
 
   Two layers, kept apart on purpose (see ROM_PLAN.md, multi-device design):
-    common layer  - vendor/zerog: everything that makes this ROM ZeroG
+    common layer  - vendor/zeros: everything that makes this ROM ZeroS
     device layer  - one device tree, kernel and blobs per phone. Mirrored
                     into zero-roms from LineageOS/TheMuppets (change 7,
                     20 October 2026) so builds never depend on upstream
                     repos staying put; kept identical to upstream until
-                    ZeroG needs its own device patches. Refresh the mirrors
+                    ZeroS needs its own device patches. Refresh the mirrors
                     from upstream before each monthly build (HANDBOOK.md).
 -->
 <manifest>
 
-  <!-- ZeroG common layer -->
-  <project name="zero-roms/android_vendor_zerog" path="vendor/zerog" remote="github" revision="zerog-24.0" />
+  <!-- ZeroS common layer -->
+  <project name="zero-roms/android_vendor_zeros" path="vendor/zeros" remote="github" revision="zeros-24.0" />
 
   <!-- Google apps for the Google build (Phase 3A, decided 23 October 2026).
        Read from MindTheGapps directly, not mirrored into zero-roms: these
-       are Google's binaries, and ZeroG does not republish them under its
+       are Google's binaries, and ZeroS does not republish them under its
        own name. Pinned to a commit and fetched shallow (the history holds
-       gigabytes of old APKs). vendor/zerog/config/gapps.mk picks the
-       modules ZeroG ships; nothing here is installed unless listed there.
+       gigabytes of old APKs). vendor/zeros/config/gapps.mk picks the
+       modules ZeroS ships; nothing here is installed unless listed there.
        Update the pin deliberately, one build at a time. -->
   <project name="MindTheGapps/vendor_gapps" path="vendor/gapps" remote="github" revision="822ff6a805533792ae43a9c3f2a159222da22a6f" upstream="cinnamonbun" clone-depth="1" />
 

@@ -1103,5 +1103,5 @@
   </project>
 
   <include name="snippets/lineage.xml" />
-  <include name="snippets/zerog.xml" />
+  <include name="snippets/zeros.xml" />
 </manifest>
